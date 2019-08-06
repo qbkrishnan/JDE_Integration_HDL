@@ -1,0 +1,5 @@
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\bin\Debug\JDE_Integration_HDL.exe.config
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\bin\Debug\JDE_Integration_HDL.exe
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\bin\Debug\JDE_Integration_HDL.pdb
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\obj\Debug\JDE_Integration_HDL.exe
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\obj\Debug\JDE_Integration_HDL.pdb

@@ -1,0 +1,12 @@
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\bin\Release\JDE_Integration_HDL.exe.config
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\bin\Release\JDE_Integration_HDL.exe
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\bin\Release\JDE_Integration_HDL.pdb
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\bin\Release\DiffieHellman.dll
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\bin\Release\Ionic.Utils.Zip.dll
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\bin\Release\Org.Mentalis.Security.dll
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\bin\Release\Tamir.SharpSSH.dll
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\obj\Release\JDE_Integration_HDL.exe
+D:\Projects\Bozzuto03\JDE_Integration_HDL\JDE_Integration_HDL\obj\Release\JDE_Integration_HDL.pdb
+E:\JDE Interface Source\JDE_Integration_HDL\JDE_Integration_HDL\bin\Release\JDE_Integration_HDL.exe.config
+E:\JDE Interface Source\JDE_Integration_HDL\JDE_Integration_HDL\obj\Release\JDE_Integration_HDL.exe
+E:\JDE Interface Source\JDE_Integration_HDL\JDE_Integration_HDL\obj\Release\JDE_Integration_HDL.pdb
