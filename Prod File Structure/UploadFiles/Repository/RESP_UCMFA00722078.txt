@@ -1,0 +1,11 @@
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+  <env:Header>
+    <wsa:Action>http://xmlns.oracle.com/apps/hcm/common/dataLoader/core/dataLoaderIntegrationService/importAndLoadDataAsyncResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:0872186a-b8a5-41ae-8917-d70367001314</wsa:MessageID>
+  </env:Header>
+  <env:Body>
+    <ns0:importAndLoadDataAsyncResponse xmlns:ns0="http://xmlns.oracle.com/apps/hcm/common/dataLoader/core/dataLoaderIntegrationService/types/">
+      <result xmlns="http://xmlns.oracle.com/apps/hcm/common/dataLoader/core/dataLoaderIntegrationService/types/">352230</result>
+    </ns0:importAndLoadDataAsyncResponse>
+  </env:Body>
+</env:Envelope>
