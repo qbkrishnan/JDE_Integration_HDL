@@ -33,18 +33,18 @@ namespace JDE_Integration_HDL
                 FileName = ZipFileCreator.CreateZipFile();
                 Console.WriteLine("Zip File '" + FileName + "' has been created" + Environment.NewLine);
                 sbMsg.AppendLine("Zip File '" + FileName + "' has been created" + Environment.NewLine);
-                
+
                 // commented for testing purpose
-               
-                //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                //UCMContentID = objDataLoader.GetUCMContentID(FileName);
-                //Console.WriteLine("The UCM ContentID '" + UCMContentID + "' has been successfully generated" + Environment.NewLine + Environment.NewLine);
-                //sbMsg.AppendLine("The UCM ContentID '" + UCMContentID + "' has been successfully generated" + Environment.NewLine + Environment.NewLine);
-                //fnExecutingUCM(UCMContentID);
-                //sbMsg.AppendLine("Data succesfully loaded to fusion.Thank you." + Environment.NewLine);
-                //sbMsg.AppendLine("***************************" + Environment.NewLine + Environment.NewLine);
-                //sbMsg.AppendLine(objCommon.ArchiveOldFiles());
-                
+
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                UCMContentID = objDataLoader.GetUCMContentID(FileName);
+                Console.WriteLine("The UCM ContentID '" + UCMContentID + "' has been successfully generated" + Environment.NewLine + Environment.NewLine);
+                sbMsg.AppendLine("The UCM ContentID '" + UCMContentID + "' has been successfully generated" + Environment.NewLine + Environment.NewLine);
+                fnExecutingUCM(UCMContentID);
+                sbMsg.AppendLine("Data succesfully loaded to fusion.Thank you." + Environment.NewLine);
+                sbMsg.AppendLine("***************************" + Environment.NewLine + Environment.NewLine);
+                sbMsg.AppendLine(objCommon.ArchiveOldFiles());
+
             }
             if (num == 0)
             {

@@ -67,6 +67,9 @@ namespace JDE_Integration_HDL
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append("METADATA|Location|FLEX:PER_LOCATIONS_DF|yardiCode(PER_LOCATIONS_DF=Global Data Elements)|LocationCode|SetCode|EffectiveStartDate|EffectiveEndDate|ActiveStatus|LocationName|Description|AddressLine1|AddressLine2");
             stringBuilder.AppendLine("|AddressLine3|AddressLine4|TownOrCity|Region1|Region2|Region3|Country|PostalCode");
+            stringBuilder.Append("METADATA|LocationLegislative|FLEX:PER_LOCATION_LEG_EFF|EFF_CATEGORY_CODE|LleInformationCategory|LocationCode|SequenceNumber|SetCode|EffectiveStartDate|EffectiveEndDate");
+            stringBuilder.Append("|_MWS_REPORTING_INCLUDE(PER_LOCATION_LEG_EFF=HRX_US_MWS_INFORMATION)|_HR_REPORTING_LOCATION(PER_LOCATION_LEG_EFF=HRX_US_LOC_EEO_VETS_INF)");
+            stringBuilder.AppendLine("|_HR_REPORTING_PROXY_Display(PER_LOCATION_LEG_EFF=HRX_US_LOC_EEO_VETS_INF)|_DUNS_NUMBER(PER_LOCATION_LEG_EFF=HRX_US_REPORTING_INFORMATION)|_NAICS_NUMBER(PER_LOCATION_LEG_EFF=HRX_US_REPORTING_INFORMATION)");
             foreach (DataRow row in (InternalDataCollectionBase)dtInputData.Rows)
             {
                 stringBuilder.Append("MERGE|Location|");
@@ -92,8 +95,39 @@ namespace JDE_Integration_HDL
                 stringBuilder.Append(row["REGION_3"].ToString() + "|");
                 stringBuilder.Append(row["COUNTRY"].ToString() + "|");
                 stringBuilder.AppendLine(row["POSTAL_CODE"].ToString());
+                stringBuilder = GenerateLocationLegislative(stringBuilder, row);
             }
+            
             return stringBuilder.ToString();
+        }
+
+        public StringBuilder GenerateLocationLegislative(StringBuilder stringBuilder, DataRow row)
+        {
+            stringBuilder.Append("MERGE|LocationLegislative|HRX_US_MWS_INFORMATION|HCM_LOC_LEG|HRX_US_MWS_INFORMATION|");
+            stringBuilder.Append(row["LOCATION_ID"].ToString() + "|");
+            stringBuilder.Append("1|COMMON|");
+            stringBuilder.Append(row["EFFECTIVE_START_DATE"].ToString().Replace("-", "/") + "|");
+            stringBuilder.Append(row["EFFECTIVE_END_DATE"].ToString().Replace("-", "/") + "|");
+            stringBuilder.AppendLine("Y||||");
+
+            stringBuilder.Append("MERGE|LocationLegislative|HRX_US_LOC_EEO_VETS_INF|HCM_LOC_LEG|HRX_US_LOC_EEO_VETS_INF|");
+            stringBuilder.Append(row["LOCATION_ID"].ToString() + "|");
+            stringBuilder.Append("1|COMMON|");
+            stringBuilder.Append(row["EFFECTIVE_START_DATE"].ToString().Replace("-", "/") + "|");
+            stringBuilder.Append(row["EFFECTIVE_END_DATE"].ToString().Replace("-", "/") + "|");
+            stringBuilder.Append("|N|");
+            stringBuilder.Append(row["DIVISION"].ToString() + "|");
+            stringBuilder.AppendLine("|");
+
+            stringBuilder.Append("MERGE|LocationLegislative|HRX_US_REPORTING_INFORMATION|HCM_LOC_LEG|HRX_US_REPORTING_INFORMATION|");
+            stringBuilder.Append(row["LOCATION_ID"].ToString() + "|");
+            stringBuilder.Append("1|COMMON|");
+            stringBuilder.Append(row["EFFECTIVE_START_DATE"].ToString().Replace("-", "/") + "|");
+            stringBuilder.Append(row["EFFECTIVE_END_DATE"].ToString().Replace("-", "/") + "|");
+            stringBuilder.Append("|||");
+            stringBuilder.Append(row["DUNS Number"].ToString() + "|");
+            stringBuilder.AppendLine(row["NAICS Number"].ToString());
+            return stringBuilder;
         }
 
         public void Generate_Location_Details(
